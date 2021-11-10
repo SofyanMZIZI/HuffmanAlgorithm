@@ -14,14 +14,12 @@ Node *getNode(char ch, int freq, Node *left, Node *right)
 
     return node;
 }
-// traverse the Huffman Tree and store Huffman Codes
-// in a map.
+// on traverse  Huffman's arbre and store Huffman Codes on a choisi to store it in an unorder map cuz it's flexible and easy to use 
 void encode(Node *root, string str,unordered_map<char, string> &huffmanCode)
 {
     if (root == nullptr)
         return;
 
-    // found a leaf node
     if (!root->left && !root->right)
     {
         huffmanCode[root->ch] = str;
@@ -31,7 +29,6 @@ void encode(Node *root, string str,unordered_map<char, string> &huffmanCode)
     encode(root->right, str + "1", huffmanCode);
 }
 
-// traverse the Huffman Tree and decode the encoded string
 void decode(Node *root, int &index, string str)
 {
     if (root == nullptr)
@@ -54,62 +51,48 @@ void decode(Node *root, int &index, string str)
         decode(root->right, index, str);
 }
 
-// Builds Huffman Tree and decode given input text
-void buildHuffmanTree(string text)
-{
-    // count frequency of appearance of each character
-    // and store it in a map
+// on va construire l'arbre et la decoder
+void HuffmanTree(string text){
+    //on compte la frequence de chaque character and store it in our  map
     unordered_map<char, int> freq;
     for (char ch : text)
     {
         freq[ch]++;
     }
-
-    // Create a priority queue to store live nodes of
-    // Huffman tree;
+    // on construit un tableau de noeud ou plus precisement une pile des noeuds et construire enfin l'arbre
     priority_queue<Node *, vector<Node *>, comparer> pq;
 
-    // Create a leaf node for each character and add it
-    // to the priority queue.
     for (auto pair : freq)
     {
         pq.push(getNode(pair.first, pair.second, nullptr, nullptr));
     }
 
-    // do till there is more than one node in the queue
     while (pq.size() != 1)
     {
-        // Remove the two nodes of highest priority
-        // (lowest frequency) from the queue
+        // Remove les deux noeuds of the highest priority
         Node *left = pq.top();
         pq.pop();
         Node *right = pq.top();
         pq.pop();
 
-        // Create a new internal node with these two nodes
-        // as children and with frequency equal to the sum
-        // of the two nodes' frequencies. Add the new node
-        // to the priority queue.
+        // here comes the magic xD
         int sum = left->freq + right->freq;
         pq.push(getNode('\0', sum, left, right));
     }
 
-    // root stores pointer to root of Huffman Tree
     Node *root = pq.top();
 
-    // traverse the Huffman Tree and store Huffman Codes
-    // in a map. Also prints them
     unordered_map<char, string> huffmanCode;
     encode(root, "", huffmanCode);
 
-    cout << "Huffman Codes are :\n"
+    cout << "les codes du Huffman sont :\n"
          << '\n';
     for (auto pair : huffmanCode)
     {
         cout << pair.first << " " << pair.second << '\n';
     }
 
-    cout << "\nOriginal string was :\n"
+    cout << "\nl'Original mot était  :\n"
          << text << '\n';
 
     // print encoded string
@@ -119,23 +102,25 @@ void buildHuffmanTree(string text)
         str += huffmanCode[ch];
     }
 
-    cout << "\nEncoded string is :\n"
+    cout << "\nEncoded string est :\n"
          << str << '\n';
 
     // traverse the Huffman Tree again and this time
-    // decode the encoded string
+    // on va decoder the encoded string
     int index = -1;
-    cout << "\nDecoded string is: \n";
+    cout << "\nDecoded string est: \n";
     while (index < (int)str.size() - 2)
     {
         decode(root, index, str);
     }
 }
 
+
+
 int main()
 {
-    string txt = "Plotting sm easter Egg to test";
-// Huffman Magic starts here
-    buildHuffmanTree(txt);
+    // Huffman Magic should  starts here
+    string text = "abracadabra let's get this party started xD";
+    HuffmanTree(text);
     return 0;
 }
