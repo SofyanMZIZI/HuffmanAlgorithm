@@ -1,5 +1,6 @@
 #include "huffman.hpp"
 #include <unordered_map>
+#include<string>
 using namespace std;
 
 // getter pour localiser un nouveaux noeud dans l'arbre
@@ -113,14 +114,18 @@ void HuffmanTree(string text){
     {
         decode(root, index, str);
     }
+    cout << "\n\n";
 }
 
 
-// la fonction main 
-int main()
+int main(int argc, char const *argv[])
 {
-    // Huffman Magic should  starts here
-    string text = "abracadabra let's get this party started xD";
+    string text;
+
+    cout << "Enter your text: \n\t>>";
+    getline (cin, text);
+
     HuffmanTree(text);
+
     return 0;
 }
