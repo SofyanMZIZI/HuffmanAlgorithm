@@ -28,7 +28,7 @@ void encode(Node *root, string str,unordered_map<char, string> &huffmanCode)
     encode(root->left, str + "0", huffmanCode);
     encode(root->right, str + "1", huffmanCode);
 }
-
+// la fonction pour decoder l'arbre
 void decode(Node *root, int &index, string str)
 {
     if (root == nullptr)
@@ -116,7 +116,7 @@ void HuffmanTree(string text){
 }
 
 
-
+// la fonction main 
 int main()
 {
     // Huffman Magic should  starts here
