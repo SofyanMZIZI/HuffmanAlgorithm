@@ -4,6 +4,7 @@ In this project, we implement the Huffman Coding algorithm in c++ fashion .
 
 ## Source code
 
+<<<<<<< HEAD
 This repository contains the following source code and data files:
 
 * `huffman.cpp` - A C++ programming language implementation.
@@ -43,3 +44,11 @@ Made By :
 ## Khaoula JBARI
 ## Idriss ZARKAOUI 
 ## Oussama KRAB
+=======
+Sofyan MZIZI <br/>
+Adnane SLIMANI <br/>
+Mohamed SALBI <br/>
+Khaoula JBARI <br/>
+Idriss ZARKAOUI <br/>
+Oussama KRAB <br/>
+>>>>>>> main
