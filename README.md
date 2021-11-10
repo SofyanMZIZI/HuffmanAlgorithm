@@ -39,8 +39,8 @@ frequent over a very short binary length.
 
 Made By :
 ## Sofyan MZIZI
-## Adnane SLIMANI 
 ## Mohamed SALBI 
 ## Khaoula JBARI
 ## Idriss ZARKAOUI 
 ## Oussama KRAB
+## Adnane SLIMANI
