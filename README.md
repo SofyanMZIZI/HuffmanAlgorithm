@@ -4,7 +4,7 @@ Implementation of Huffman coding using C++
 
 
 Sofyan MZIZI
-Adnane Slimani
-Mohamed Salbi
-Khaoula Jbari
-Zarkaoui idriss
+Adnane SLIMANI
+Mohamed SALBI
+Khaoula JBARI
+Idriss ZARKAOUI
