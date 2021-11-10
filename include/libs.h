@@ -30,6 +30,7 @@ typedef struct tree
 {
     node Node;
     boolean codeValue;
+    unsigned occSum;
     struct tree *leftNode;
     struct tree *rightNode;
 }tree;
