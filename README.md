@@ -4,7 +4,6 @@ In this project, we implement the Huffman Coding algorithm in c++ fashion .
 
 ## Source code
 
-<<<<<<< HEAD
 This repository contains the following source code and data files:
 
 * `huffman.cpp` - A C++ programming language implementation.
@@ -35,9 +34,7 @@ The processing unit is reduced to the bit. Huffman suggests recoding data that h
 very low occurrence over a binary length greater than the average, and recode the data very
 frequent over a very short binary length.
 
-##
-
-***** Made By : *****
+Made By : 
 ## Sofyan MZIZI
 ## Mohamed SALBI 
 ## Khaoula JBARI
